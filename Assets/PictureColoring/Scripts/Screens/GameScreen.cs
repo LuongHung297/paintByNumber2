@@ -49,14 +49,15 @@ namespace BizzyBeeGames.PictureColoring
 			shareButtonsContainer.SetActive(NativePlugin.Exists());
 		}
 
-		/// <summary>
-		/// Invoked when the hint button is clicked
-		/// </summary>
-		public void OnHintButtonClicked()
-		{
-			LevelData activeLevelData = GameManager.Instance.ActiveLevelData;
+        /// <summary>
+        /// Invoked when the hint button is clicked
+        /// </summary>
 
-			if (activeLevelData != null)
+        public void OnHintButtonClicked()
+		{
+            LevelData activeLevelData = GameManager.Instance.ActiveLevelData;
+
+            if (activeLevelData != null)
 			{
 				// Get a random uncolored region inside the selected color region
 				int selectedColoredIndex	= colorList.SelectedColorIndex;

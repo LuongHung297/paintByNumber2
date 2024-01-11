@@ -84,55 +84,65 @@ namespace BizzyBeeGames.PictureColoring
 			ScreenManager.Instance.OnSwitchingScreens += OnSwitchingScreens;
 		}
 
-		#endregion
+        #endregion
 
-		#region Public Methods
+        #region Public Methods
 
-		/// <summary>
-		/// Shows the level selected popup
-		/// </summary>
-		public void LevelSelected(LevelData levelData)
+        /// <summary>
+        /// Shows the level selected popup
+        /// </summary>
+        public void LevelRestart()
+        {
+            LevelData activeLevelData = GameManager.Instance.ActiveLevelData;
+
+            DeleteLevelSaveData(activeLevelData);
+            StartLevel(activeLevelData);
+        }
+        public void LevelSelected(LevelData levelData)
 		{
-			bool isLocked = levelData.locked && !levelData.LevelSaveData.isUnlocked;
+			//chih sua
+            StartLevel(levelData);
 
-			// Check if the level has been played or if its locked
-			if (IsLevelPlaying(levelData.Id) || isLocked)
-			{
-				PopupManager.Instance.Show("level_selected", new object[] { levelData, isLocked }, (bool cancelled, object[] outData) => 
-				{
-					if (!cancelled)
-					{
-						string action = outData[0] as string;
+			//         bool isLocked = levelData.locked && !levelData.LevelSaveData.isUnlocked;
 
-						// Check what button the player selected
-						switch (action)
-						{
-							case "continue":
-								StartLevel(levelData);
-								break;
-							case "delete":
-								DeleteLevelSaveData(levelData);
-								break;
-							case "restart":
-								DeleteLevelSaveData(levelData);
-								StartLevel(levelData);
-								break;
-							case "unlock":
-								// Try and spend the coins required to unlock the level
-								if (CurrencyManager.Instance.TrySpend("coins", levelData.coinsToUnlock))
-								{
-									UnlockLevel(levelData);
-									StartLevel(levelData);
-								}
-								break;
-						}
-					}
-				});
-			}
-			else
-			{
-				StartLevel(levelData);
-			}
+			//// Check if the level has been played or if its locked
+			//if (IsLevelPlaying(levelData.Id) || isLocked)
+			//{
+			//PopupManager.Instance.Show("level_selected", new object[] { levelData, isLocked }, (bool cancelled, object[] outData) =>
+			//	{
+			//		if (!cancelled)
+			//		{
+			//			string action = outData[0] as string;
+
+			//			// Check what button the player selected
+			//			switch (action)
+			//			{
+			//				case "continue":
+			//					StartLevel(levelData);
+			//					break;
+			//				case "delete":
+			//					DeleteLevelSaveData(levelData);
+			//					break;
+			//				case "restart":
+			//					DeleteLevelSaveData(levelData);
+			//					StartLevel(levelData);
+			//					break;
+			//				case "unlock":
+			//					// Try and spend the coins required to unlock the level
+			//					if (CurrencyManager.Instance.TrySpend("coins", levelData.coinsToUnlock))
+			//					{
+			//						UnlockLevel(levelData);
+			//						StartLevel(levelData);
+			//					}
+			//					break;
+			//			}
+			//		}
+			//	});
+			//}
+			//else
+			//{
+			//	StartLevel(levelData);
+			//}
 		}
 
 		public void StartLevel(LevelData levelData)

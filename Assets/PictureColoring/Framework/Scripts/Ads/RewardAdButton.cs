@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BizzyBeeGames.PictureColoring;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -92,36 +93,46 @@ namespace BizzyBeeGames
 		}
 
 		private void OnClicked()
-		{
-			#if UNITY_EDITOR
-			if (testInEditor)
-			{
-				OnRewardAdGranted("", 0);
+        {
+            object[] popupData =
+                {
+                    rewardGrantedPopupTitle,
+                    rewardGrantedPopupMessage
+                };
 
-				return;
-			}
-			#endif
-
-			uiContainer.SetActive(false);
-
-			MobileAdsManager.Instance.ShowRewardAd(null, OnRewardAdGranted);
+			PopupManager.Instance.Show(rewardGrantedPopupId, popupData);         
 		}
+		public void showAd() {
+#if UNITY_EDITOR
+            if (testInEditor)
+            {
+                OnRewardAdGranted("", 0);
+
+                return;
+            }
+
+#endif
+
+            uiContainer.SetActive(false);
+
+            MobileAdsManager.Instance.ShowRewardAd(null, OnRewardAdGranted);
+        }
 
 		private void OnRewardAdGranted(string id, double amount)
 		{
 			CurrencyManager.Instance.Give(currencyId, amountToReward);
+			PopupManager.Instance.CloseActivePopup();
+            //if (showRewardGrantedPopup)
+            //{
 
-			if (showRewardGrantedPopup)
-			{
-				object[] popupData =
-				{
-					rewardGrantedPopupTitle,
-					rewardGrantedPopupMessage
-				};
-
-				PopupManager.Instance.Show(rewardGrantedPopupId, popupData);
-			}
-		}
+            //             object[] popupData =
+            //                     {
+            //                 rewardGrantedPopupTitle,
+            //                 rewardGrantedPopupMessage
+            //             };
+            //             PopupManager.Instance.Show(rewardGrantedPopupId, popupData);
+            //}
+        }
 
 		#endregion
 	}

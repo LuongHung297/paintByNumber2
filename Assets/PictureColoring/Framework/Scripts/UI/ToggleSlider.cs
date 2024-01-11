@@ -27,14 +27,14 @@ namespace BizzyBeeGames
 
 		[Space]
 
-		[SerializeField] private Text 			onText				= null;
-		[SerializeField] private Text 			offText				= null;
+		[SerializeField] private Color onTextColorOn = Color.white;
+        [SerializeField] private Color onTextColorOff = Color.white;
+        //[SerializeField] private Image				BgChange			= null;
+        #endregion
 
-		#endregion
+        #region Member Variables
 
-		#region Member Variables
-
-		private Camera	canvasCamera;
+        private Camera	canvasCamera;
 		private bool	isHandleMoving;
 		private bool	isHandleAnimating;
 
@@ -98,7 +98,7 @@ namespace BizzyBeeGames
 			SetToggle(!IsOn, true);
 		}
 
-		public void SetToggle(bool on, bool animate)
+        public void SetToggle(bool on, bool animate)
 		{
 			toggleHasBeenSet = true;
 			
@@ -167,24 +167,24 @@ namespace BizzyBeeGames
 		}
 
 		private void SetUI(float t)
-		{
-			handleColorGraphic.color = Color.Lerp(handleOffColor, handleOnColor, t);
+        {
+            GetComponent<Image>().color = Color.Lerp(onTextColorOff, onTextColorOn, t); ;
+			//handleColorGraphic.color = Color.Lerp(handleOffColor, handleOnColor, t);
 
-			Color onTextColorOn = onText.color;
-			Color onTextColorOff = onText.color;
+			//Color onTextColorOn = onText.color;
+			//Color onTextColorOff = onText.color;
 
-			onTextColorOn.a		= 1f;
-			onTextColorOff.a	= 0f;
 
-			onText.color = Color.Lerp(onTextColorOff, onTextColorOn, t);
 
-			Color offTextColorOn	= offText.color;
-			Color offTextColorOff	= offText.color;
+			//onText.color = Color.Lerp(onTextColorOff, onTextColorOn, t);
 
-			offTextColorOn.a	= 0f;
-			offTextColorOff.a	= 1f;
+			//Color offTextColorOn	= offText.color;
+			//Color offTextColorOff	= offText.color;
 
-			offText.color = Color.Lerp(offTextColorOff, offTextColorOn, t);
+			//offTextColorOn.a	= 0f;
+			//offTextColorOff.a	= 1f;
+
+			//offText.color = Color.Lerp(offTextColorOff, offTextColorOn, t);
 		}
 
 		#endregion

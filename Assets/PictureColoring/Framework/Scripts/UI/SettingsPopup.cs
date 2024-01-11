@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 namespace BizzyBeeGames
@@ -12,7 +13,7 @@ namespace BizzyBeeGames
 
 		[SerializeField] private ToggleSlider	musicToggle = null;
 		[SerializeField] private ToggleSlider	soundToggle = null;
-
+		private bool musicEnabled = false;
 		#endregion
 
 		#region Unity Methods
@@ -23,14 +24,13 @@ namespace BizzyBeeGames
 			soundToggle.SetToggle(SoundManager.Instance.IsSoundEffectsOn, false);
 
 			musicToggle.OnValueChanged += OnMusicValueChanged;
-			soundToggle.OnValueChanged += OnSoundEffectsValueChanged;
-		}
+            soundToggle.OnValueChanged += OnSoundEffectsValueChanged;
+        }
 
-		#endregion
+        #endregion
 
-		#region Private Methods
-
-		private void OnMusicValueChanged(bool isOn)
+        #region Private Methods
+        private void OnMusicValueChanged(bool isOn)
 		{
 			SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
 		}
@@ -40,6 +40,6 @@ namespace BizzyBeeGames
 			SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.SoundEffect, isOn);
 		}
 
+    }
 		#endregion
-	}
 }

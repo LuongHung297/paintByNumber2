@@ -1,3 +1,4 @@
+using BizzyBeeGames;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Policy;
@@ -38,5 +39,11 @@ public class Onclick : MonoBehaviour
             //texttocchange.text = "hung";
 
         }
+    }
+    public void sutSound(bool ison)
+    {
+        //musicToggle.SetToggle(SoundManager.Instance.IsMusicOn, false);
+        SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, ison);
+
     }
 }

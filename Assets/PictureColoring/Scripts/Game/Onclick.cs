@@ -30,9 +30,9 @@ public class Onclick : MonoBehaviour
 
         if (textMeshProUGUI != null)
         {
-            
+
             foreach (var data in textMeshProUGUI.GetComponentsInChildren<TextMeshProUGUI>())
-            { 
+            {
                 data.enabled = false;
             }
             texttocchange.enabled = true;
@@ -46,4 +46,20 @@ public class Onclick : MonoBehaviour
         SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, ison);
 
     }
+    public void DropDownActive(GameObject image)
+    {
+        var data = GameObject.FindGameObjectWithTag("DropIcon");
+        data.transform.Rotate(180, 0, 0);
+        if (image.activeInHierarchy)
+        {
+            data.transform.Rotate(0,0,0);
+            image.SetActive(false);
+        }
+        else
+        {
+            image.SetActive(true);
+
+        }
+    }
+
 }

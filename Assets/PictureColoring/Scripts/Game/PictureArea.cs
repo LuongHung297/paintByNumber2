@@ -13,7 +13,6 @@ namespace BizzyBeeGames.PictureColoring
 		[SerializeField] private PictureScrollArea	pictureScrollArea	= null;
 		[SerializeField] private float				edgePadding			= 0;
 		[SerializeField] private float				maxScale			= 1;
-		[SerializeField] private Texture2D			regionBackground	= null;
 		[SerializeField] private float				borderSize			= 1;
 		[SerializeField] private Color				borderColor			= Color.white;
 
@@ -24,6 +23,8 @@ namespace BizzyBeeGames.PictureColoring
 		[SerializeField] private float				minNumberSize		= 10;
 		[SerializeField] private float				digitSpacing 		= 0f;
 		[SerializeField] private float				numberPadding 		= 0f;
+		[SerializeField] private Texture2D[]		ListImageToUse;
+		[SerializeField] private Texture2D regionBackground = null;
 
 		[Range(1, 0)][SerializeField] private float numberStartAppearing 	= 0f;
 		[Range(1, 0)][SerializeField] private float numberEndAppearing 		= 0f;
@@ -67,11 +68,15 @@ namespace BizzyBeeGames.PictureColoring
 		#endregion
 
 		#region Public Methods
+		public void PictureArenaChange(int texture)
+		{
+			regionBackground = ListImageToUse[texture];
 
+        }
 		public void Initialize()
 		{
-			// Get the camera the Canvas is set to, if the canvas is set to Screen Space Overally this will be null
-			canvasCamera = Utilities.GetCanvasCamera(transform);
+            // Get the camera the Canvas is set to, if the canvas is set to Screen Space Overally this will be null
+            canvasCamera = Utilities.GetCanvasCamera(transform);
 
 			CreatePictureObjects();
 

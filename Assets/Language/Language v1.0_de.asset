@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Language v1.0_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: cb4e3ed193124a04c8e63c86c465d542, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9013682176
+    m_Localized: "Bibliothek\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11288507965440
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14044912279552
+    m_Localized: "Vollst\xE4ndig"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14217239453696
+    m_Localized: 'Alle Bilder sind fertig
+
+      werden hier gespeichert'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14583909703680
+    m_Localized: "Verbrauchsmaterial: falsch \u2013 Gekauft: falsch"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14751245656064
+    m_Localized: Fehlertext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15068808994816
+    m_Localized: EINSTELLUNGEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15247326961664
+    m_Localized: "Keine M\xFCnzen mehr\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15533978279936
+    m_Localized: KOSTENLOSER TIPP!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15689335300096
+    m_Localized: SPEICHERN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15884731146240
+    m_Localized: "DATENPRIVATSPH\xC4RE\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16089140551680
+    m_Localized: "ERLAUBNIS ERFORDERLICH\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16327637065728
+    m_Localized: "In Bearbeitung\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16665211428864
+    m_Localized: Deutsch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16769498603520
+    m_Localized: Englisch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17164245524480
+    m_Localized: "Bild wird geladen...\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17367321141248
+    m_Localized: "\rSie m\xFCssen sich ein kurzes Werbevideo ansehen, um einen kostenlosen
+      Hinweis zu erhalten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17670036643840
+    m_Localized: "Schau jetzt\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17827499204608
+    m_Localized: Stornieren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18039093452800
+    m_Localized: "T\xE4glich"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18268819677184
+    m_Localized: "Schlie\xDFen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18451917824000
+    m_Localized: "Automatischer Farbwechsel\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18572508258304
+    m_Localized: Einstellung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18928843743232
+    m_Localized: "L\xE4nge der Dienstzeit\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19270314614784
+    m_Localized: Datenschutzrichtlinie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19501194272768
+    m_Localized: "R\xFCckmeldung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19630823432192
+    m_Localized: "Bewerten Sie uns\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19941919154176
+    m_Localized: Aktie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20402508259328
+    m_Localized: Speichern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20798777712640
+    m_Localized: "Sound-Effekt\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20956575817728
+    m_Localized: "Markieren Sie Bereiche\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21130907869184
+    m_Localized: "Gl\xFCckwunsch!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21314882625536
+    m_Localized: "Mein Gem\xE4lde\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21433690480640
+    m_Localized: Hintergrundmusik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21870099423232
+    m_Localized: "Malen Sie jetzt!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22036151918592
+    m_Localized: Kategorien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22251562983424
+    m_Localized: "Sie k\xF6nnen die Liste der Kategorien durch Verschieben der Schaltfl\xE4chen
+      neu ordnen\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22380890152960
+    m_Localized: Leistung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22901260673024
+    m_Localized: "\rAlle Bilder in Bearbeitung\r\nwerden hier gespeichert"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

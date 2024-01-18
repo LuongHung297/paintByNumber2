@@ -178,6 +178,40 @@ MonoBehaviour:
       are saved here'
     m_Metadata:
       m_Items: []
+  - m_Id: 1038380829892608
+    m_Localized: Vibrant And Colorful Painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038890718846976
+    m_Localized: Unleash your creativity with a collection of exquisite photos, ready
+      for you to freely colorize
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040132027310080
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1045016420147200
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068831485321216
+    m_Localized: Preserve The Painting Journey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068924259131392
+    m_Localized: Create short videos when you finish a painting to preserve your
+      colorization process
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069541228666880
+    m_Localized: START NOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1406152326766592
+    m_Localized: All
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

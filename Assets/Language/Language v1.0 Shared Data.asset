@@ -68,11 +68,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16665211428864
-    m_Key: text.lang.ger
+    m_Key: lang.de
     m_Metadata:
       m_Items: []
   - m_Id: 16769498603520
-    m_Key: text.lang.en
+    m_Key: lang.en-US
     m_Metadata:
       m_Items: []
   - m_Id: 17164245524480
@@ -169,6 +169,39 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22901260673024
     m_Key: "allsave\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038380829892608
+    m_Key: Vibrant And Colorful Painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038890718846976
+    m_Key: unleash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040132027310080
+    m_Key: "Skip\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1045016420147200
+    m_Key: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068831485321216
+    m_Key: Preserve The Painting Journey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068924259131392
+    m_Key: Create short videos when you finish a painting to preserve your colorization
+      process
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069541228666880
+    m_Key: START NOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1406152326766592
+    m_Key: All
     m_Metadata:
       m_Items: []
   m_Metadata:

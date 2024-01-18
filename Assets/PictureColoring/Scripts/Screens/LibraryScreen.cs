@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace BizzyBeeGames.PictureColoring
@@ -86,8 +89,8 @@ namespace BizzyBeeGames.PictureColoring
 
 				if (i == 0)
 				{
-					categoryListItem.Setup("All");
-				}
+					categoryListItem.Setup("All");		
+                }
 				else
 				{
 					categoryListItem.Setup(GameManager.Instance.Categories[i - 1].displayName);

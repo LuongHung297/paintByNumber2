@@ -76,7 +76,10 @@ namespace BizzyBeeGames
 			// Show the home screen when the app starts up
 			Show(homeScreenId, false, true);
 		}
-
+		public void setHome(string Home)
+		{
+            homeScreenId = Home;
+		}
 		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.Escape))

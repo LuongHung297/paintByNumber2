@@ -178,6 +178,40 @@ MonoBehaviour:
     m_Localized: "\rAlle Bilder in Bearbeitung\r\nwerden hier gespeichert"
     m_Metadata:
       m_Items: []
+  - m_Id: 1038380829892608
+    m_Localized: "Lebendige und farbenfrohe Malerei\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038890718846976
+    m_Localized: "Lassen Sie Ihrer Kreativit\xE4t freien Lauf mit einer Sammlung
+      exquisiter Fotos, die Sie frei kolorieren k\xF6nnen\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040132027310080
+    m_Localized: "\xDCberspringen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1045016420147200
+    m_Localized: "N\xE4chste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068831485321216
+    m_Localized: "Bewahren Sie die Malreise auf\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068924259131392
+    m_Localized: "Erstellen Sie nach Abschluss eines Gem\xE4ldes kurze Videos, um
+      den Kolorierungsprozess beizubehalten\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069541228666880
+    m_Localized: "JETZT ANFANGEN\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1406152326766592
+    m_Localized: Alle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

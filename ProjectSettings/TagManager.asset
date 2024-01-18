@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ChangeText
   - DropIcon
+  - previewBg
   layers:
   - Default
   - TransparentFX

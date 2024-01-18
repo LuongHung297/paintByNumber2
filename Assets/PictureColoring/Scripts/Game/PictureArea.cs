@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace BizzyBeeGames.PictureColoring
 {
@@ -36,7 +37,7 @@ namespace BizzyBeeGames.PictureColoring
 		private RectTransform		pictureContainer;
 		private PictureCreator		pictureCreator;
 		private ColorNumbersText	colorNumbersText;
-
+		public backGroundGen backGroundGen;
 		private Camera canvasCamera;
 
 		#endregion
@@ -44,6 +45,8 @@ namespace BizzyBeeGames.PictureColoring
 		#region Properties
 
 		public PixelClickedHandler OnPixelClicked { get; set; }
+		public int texttureSelct { get; set; }
+		public Texture2D[] ListImageToUse_share { get; set; }
 
 		#endregion
 
@@ -70,17 +73,19 @@ namespace BizzyBeeGames.PictureColoring
 		#region Public Methods
 		public void PictureArenaChange(int texture)
 		{
-			regionBackground = ListImageToUse[texture];
-
+            backGroundGen.removeBg();
+			backGroundGen.ReloadListBack(ListImageToUse, texture);
+            regionBackground = ListImageToUse[texture];
+			texttureSelct = texture;
         }
-		public void Initialize()
-		{
+        public void Initialize()
+        {
+            GameObject.FindGameObjectWithTag("previewBg").GetComponent<Image>().sprite = Sprite.Create(regionBackground, new Rect(0, 0, regionBackground.width, regionBackground.height), new Vector2(0.5f, 0.5f));
+            ListImageToUse_share = ListImageToUse;
             // Get the camera the Canvas is set to, if the canvas is set to Screen Space Overally this will be null
             canvasCamera = Utilities.GetCanvasCamera(transform);
-
-			CreatePictureObjects();
-
-			pictureScrollArea.OnClick	+= OnPictureAreaClicked;
+            CreatePictureObjects();
+            pictureScrollArea.OnClick	+= OnPictureAreaClicked;
 			pictureScrollArea.OnZoom	+= OnPictureAreaZoomed;
 		}
 

@@ -34,14 +34,14 @@ namespace BizzyBeeGames
         #region Private Methods
         private void OnMusicValueChanged(bool isOn)
 		{
-            if (isOn)
-            {
-                toggleOnclick.setToggleOn(isOn);
-            }
-            else
-            {
-                toggleOnclick.setToggleoff(isOn);
-            }
+            //if (isOn)
+            //{
+            //    toggleOnclick.setToggleOn(isOn);
+            //}
+            //else
+            //{
+            //    toggleOnclick.setToggleoff(isOn);
+            //}
             SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
 		}
 

@@ -25,6 +25,7 @@ namespace BizzyBeeGames.PictureColoring
 		[SerializeField] private GameObject		shareButtonsContainer		= null;
 		[SerializeField] private CanvasGroup	notificationContainer		= null;
 		[SerializeField] private Text			notificationText			= null;
+		[SerializeField] private Sprite			CompleteSp			= null;
 
 		#endregion
 
@@ -158,8 +159,9 @@ namespace BizzyBeeGames.PictureColoring
 			gameplayUI.interactable 	= true;
 			gameplayUI.blocksRaycasts	= true;
 			gameplayUI.alpha			= 1f;
+            gameObject.GetComponent<Image>().sprite = null;
 
-			levelCompleteUI.interactable 	= false;
+            levelCompleteUI.interactable 	= false;
 			levelCompleteUI.blocksRaycasts	= false;
 			levelCompleteUI.alpha			= 0f;
 		}
@@ -248,7 +250,7 @@ namespace BizzyBeeGames.PictureColoring
 
 				gameplayUI.interactable		= false;
 				gameplayUI.blocksRaycasts	= false;
-
+				gameObject.GetComponent<Image>().sprite = CompleteSp;
 				levelCompleteUI.interactable	= true;
 				levelCompleteUI.blocksRaycasts	= true;
 			}

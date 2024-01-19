@@ -24,8 +24,8 @@ namespace BizzyBeeGames
 			string title	= inData[0] as string;
 			string message	= inData[1] as string;
 
-			titleText.text		= title;
-			messageText.text	= message;
+			//titleText.text		= title;
+			//messageText.text	= message;
 		}
 
 		#endregion

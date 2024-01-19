@@ -89,7 +89,8 @@ namespace BizzyBeeGames.PictureColoring
                 ParentToggle_off.SetActive(true);
                 ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[1];
             }
-         
+            ParentToggle.GetComponent<ToggleMusic>().OnMusicValueChanged(ParentToggle.isOn);
+
         }
 
     }

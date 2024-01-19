@@ -11,8 +11,7 @@ public class ToggleMusic : MonoBehaviour
 
     public void OnMusicValueChanged(bool isOn)
     {
-        slider.SetToggle(SoundManager.Instance.IsMusicOn, false);
-        SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
+        //slider.SetToggle(SoundManager.Instance.IsMusicOn, true);
     }
 
     //private void OnSoundEffectsValueChanged(bool isOn)

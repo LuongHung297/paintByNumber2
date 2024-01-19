@@ -18,6 +18,7 @@ namespace BizzyBeeGames.PictureColoring
         public GameObject ParentToggle_off;
         public List<Sprite> ParentToggle_Parent;
         private PictureArea PictureArea;
+        public ToggleSlider MusicSlider;
         public void Seclect(Image item)
         {
             var parentChild = item.transform.parent.GetComponentsInChildren<Image>();
@@ -85,7 +86,8 @@ namespace BizzyBeeGames.PictureColoring
             {
                 setToggleoff(ParentToggle.isOn);
             }
-            ParentToggle.GetComponent<ToggleMusic>().OnMusicValueChanged(ParentToggle.isOn);
+            MusicSlider.SetToggle(ParentToggle.isOn,true);
+            SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, ParentToggle.isOn);
 
         }
         public void setToggleOn(bool ison)
@@ -93,12 +95,16 @@ namespace BizzyBeeGames.PictureColoring
             ParentToggle_on.SetActive(true);
             ParentToggle_off.SetActive(false);
             ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[0];
-        } 
+            ParentToggle.isOn = true;
+
+        }
         public void setToggleoff(bool ison)
         {
             ParentToggle_on.SetActive(false);
             ParentToggle_off.SetActive(true);
             ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[1];
+            ParentToggle.isOn = false;
+
         }
 
     }

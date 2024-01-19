@@ -104,7 +104,6 @@ namespace BizzyBeeGames
 			toggleHasBeenSet = true;
 			
 			IsOn = on;
-
             if (OnValueChanged != null)
 			{
 				OnValueChanged(on);

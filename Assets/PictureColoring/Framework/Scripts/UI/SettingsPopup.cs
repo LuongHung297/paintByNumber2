@@ -26,22 +26,29 @@ namespace BizzyBeeGames
 
 			musicToggle.OnValueChanged += OnMusicValueChanged;
             soundToggle.OnValueChanged += OnSoundEffectsValueChanged;
-
-        }
+			if (SoundManager.Instance.IsMusicOn)
+			{
+				toggleOnclick.setToggleOn(true);
+			}
+			else
+			{
+				toggleOnclick.setToggleoff(false);
+			}
+		}
 
         #endregion
 
         #region Private Methods
         private void OnMusicValueChanged(bool isOn)
 		{
-            //if (isOn)
-            //{
-            //    toggleOnclick.setToggleOn(isOn);
-            //}
-            //else
-            //{
-            //    toggleOnclick.setToggleoff(isOn);
-            //}
+            if (isOn)
+            {
+                toggleOnclick.setToggleOn(true);
+            }
+            else
+            {
+                toggleOnclick.setToggleoff(false);
+            }
             SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
 		}
 

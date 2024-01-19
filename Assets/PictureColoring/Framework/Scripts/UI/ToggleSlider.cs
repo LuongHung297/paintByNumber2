@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using BizzyBeeGames.PictureColoring;
 
 namespace BizzyBeeGames
 {
@@ -104,7 +105,7 @@ namespace BizzyBeeGames
 			
 			IsOn = on;
 
-			if (OnValueChanged != null)
+            if (OnValueChanged != null)
 			{
 				OnValueChanged(on);
 			}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BizzyBeeGames.PictureColoring;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
@@ -10,8 +11,8 @@ namespace BizzyBeeGames
 		#region Inspector Variables
 
 		[Space]
-
-		[SerializeField] private ToggleSlider	musicToggle = null;
+        [SerializeField] private Onclick toggleOnclick;
+        [SerializeField] private ToggleSlider	musicToggle = null;
 		[SerializeField] private ToggleSlider	soundToggle = null;
 		private bool musicEnabled = false;
 		#endregion
@@ -25,6 +26,7 @@ namespace BizzyBeeGames
 
 			musicToggle.OnValueChanged += OnMusicValueChanged;
             soundToggle.OnValueChanged += OnSoundEffectsValueChanged;
+
         }
 
         #endregion
@@ -32,7 +34,15 @@ namespace BizzyBeeGames
         #region Private Methods
         private void OnMusicValueChanged(bool isOn)
 		{
-			SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
+            if (isOn)
+            {
+                toggleOnclick.setToggleOn(isOn);
+            }
+            else
+            {
+                toggleOnclick.setToggleoff(isOn);
+            }
+            SoundManager.Instance.SetSoundTypeOnOff(SoundManager.SoundType.Music, isOn);
 		}
 
 		private void OnSoundEffectsValueChanged(bool isOn)

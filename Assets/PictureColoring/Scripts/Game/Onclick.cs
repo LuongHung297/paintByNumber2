@@ -79,18 +79,26 @@ namespace BizzyBeeGames.PictureColoring
         {
             if (ParentToggle.isOn)
             {
-                ParentToggle_on.SetActive(true);
-                ParentToggle_off.SetActive(false);
-                ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[0];
+                setToggleOn(ParentToggle.isOn);
             }
             else
             {
-                ParentToggle_on.SetActive(false);
-                ParentToggle_off.SetActive(true);
-                ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[1];
+                setToggleoff(ParentToggle.isOn);
             }
             ParentToggle.GetComponent<ToggleMusic>().OnMusicValueChanged(ParentToggle.isOn);
 
+        }
+        public void setToggleOn(bool ison)
+        {
+            ParentToggle_on.SetActive(true);
+            ParentToggle_off.SetActive(false);
+            ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[0];
+        } 
+        public void setToggleoff(bool ison)
+        {
+            ParentToggle_on.SetActive(false);
+            ParentToggle_off.SetActive(true);
+            ParentToggle.GetComponent<Image>().sprite = ParentToggle_Parent[1];
         }
 
     }

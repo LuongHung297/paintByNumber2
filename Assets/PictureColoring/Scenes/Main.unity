@@ -23434,6 +23434,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   animContainer: {fileID: 1770558728}
+  toggleOnclick: {fileID: 322812660}
   musicToggle: {fileID: 222266490}
   soundToggle: {fileID: 1127299164}
 --- !u!114 &879598192
@@ -31626,6 +31627,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   animContainer: {fileID: 1770558728}
+  toggleOnclick: {fileID: 0}
   musicToggle: {fileID: 0}
   soundToggle: {fileID: 0}
 --- !u!1 &1199924866

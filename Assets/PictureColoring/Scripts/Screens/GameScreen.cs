@@ -26,11 +26,33 @@ namespace BizzyBeeGames.PictureColoring
 		[SerializeField] private CanvasGroup	notificationContainer		= null;
 		[SerializeField] private Text			notificationText			= null;
 		[SerializeField] private Sprite			CompleteSp			= null;
+		[SerializeField] private List<GameObject>			ShowList			= null;
+		[SerializeField] private GameObject			HideText			= null;
 
 		#endregion
 
 		#region Public Methods
+		public void Completeview()
 
+        {
+            UIAnimation anim;
+            anim = UIAnimation.Alpha(gameplayUI, 0f, 0.5f);
+            anim.style = UIAnimation.Style.EaseOut;
+            anim.Play();
+            anim = UIAnimation.Alpha(levelCompleteUI, 1f, 0.5f);
+            anim.style = UIAnimation.Style.EaseOut;
+            anim.Play();
+            gameplayUI.interactable = false;
+            gameplayUI.blocksRaycasts = false;
+            gameObject.GetComponent<Image>().sprite = CompleteSp;
+            levelCompleteUI.interactable = true;
+            levelCompleteUI.blocksRaycasts = true;
+			HideText.SetActive(false);
+            foreach (var item in ShowList)
+            {
+				item.SetActive(true);
+            }
+        }
 		public override void Initialize()
 		{
 			base.Initialize();
@@ -46,8 +68,8 @@ namespace BizzyBeeGames.PictureColoring
 
 			gameplayUI.gameObject.SetActive(true);
 			levelCompleteUI.gameObject.SetActive(true);
-
-			shareButtonsContainer.SetActive(NativePlugin.Exists());
+         
+            shareButtonsContainer.SetActive(NativePlugin.Exists());
 		}
 
         /// <summary>
@@ -164,7 +186,12 @@ namespace BizzyBeeGames.PictureColoring
             levelCompleteUI.interactable 	= false;
 			levelCompleteUI.blocksRaycasts	= false;
 			levelCompleteUI.alpha			= 0f;
-		}
+            HideText.SetActive(true);
+            foreach (var item in ShowList)
+            {
+                item.SetActive(false);
+            }
+        }
 
 		/// <summary>
 		/// Invoked by ColorList when a new color has been selected

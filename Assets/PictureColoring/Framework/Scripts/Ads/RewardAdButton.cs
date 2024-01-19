@@ -37,8 +37,7 @@ namespace BizzyBeeGames
 		private void Start()
 		{
 			uiContainer.SetActive(false);
-
-			bool areRewardAdsEnabled = MobileAdsManager.Instance.AreRewardAdsEnabled;
+            bool areRewardAdsEnabled = MobileAdsManager.Instance.AreRewardAdsEnabled;
 
 			#if UNITY_EDITOR
 			areRewardAdsEnabled = testInEditor;
@@ -114,7 +113,6 @@ namespace BizzyBeeGames
 #endif
 
             uiContainer.SetActive(false);
-
             MobileAdsManager.Instance.ShowRewardAd(null, OnRewardAdGranted);
         }
 

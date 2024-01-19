@@ -11,6 +11,7 @@ namespace BizzyBeeGames.PictureColoring
 
 		[Header("Data")]
 		[SerializeField] private List<CategoryData> categories = null;
+		[SerializeField] private GameScreen Gamescreen = null;
 
 		[Header("Values")]
 		[SerializeField] private bool	awardHints			= false;
@@ -27,7 +28,9 @@ namespace BizzyBeeGames.PictureColoring
 
 		private int numLevelsStarted;
 
+		
 		// Contains all LevelSaveDatas which have atleast one region colored in but have not been completed yet
+
 		private Dictionary<string, LevelSaveData> playedLevelSaveDatas;
 
 		/// <summary>
@@ -98,54 +101,61 @@ namespace BizzyBeeGames.PictureColoring
             DeleteLevelSaveData(activeLevelData);
             StartLevel(activeLevelData);
         }
+
         public void LevelSelected(LevelData levelData)
 		{
 			//chih sua
             StartLevel(levelData);
+            LevelData activeLevelData = ActiveLevelData;
+            var levelCompleted = activeLevelData.AllRegionsColored();
+			if (levelCompleted)
+			{
+                Gamescreen.Completeview();
 
-			//         bool isLocked = levelData.locked && !levelData.LevelSaveData.isUnlocked;
+            }
+            //         bool isLocked = levelData.locked && !levelData.LevelSaveData.isUnlocked;
 
-			//// Check if the level has been played or if its locked
-			//if (IsLevelPlaying(levelData.Id) || isLocked)
-			//{
-			//PopupManager.Instance.Show("level_selected", new object[] { levelData, isLocked }, (bool cancelled, object[] outData) =>
-			//	{
-			//		if (!cancelled)
-			//		{
-			//			string action = outData[0] as string;
+            //// Check if the level has been played or if its locked
+            //if (IsLevelPlaying(levelData.Id) || isLocked)
+            //{
+            //PopupManager.Instance.Show("level_selected", new object[] { levelData, isLocked }, (bool cancelled, object[] outData) =>
+            //	{
+            //		if (!cancelled)
+            //		{
+            //			string action = outData[0] as string;
 
-			//			// Check what button the player selected
-			//			switch (action)
-			//			{
-			//				case "continue":
-			//					StartLevel(levelData);
-			//					break;
-			//				case "delete":
-			//					DeleteLevelSaveData(levelData);
-			//					break;
-			//				case "restart":
-			//					DeleteLevelSaveData(levelData);
-			//					StartLevel(levelData);
-			//					break;
-			//				case "unlock":
-			//					// Try and spend the coins required to unlock the level
-			//					if (CurrencyManager.Instance.TrySpend("coins", levelData.coinsToUnlock))
-			//					{
-			//						UnlockLevel(levelData);
-			//						StartLevel(levelData);
-			//					}
-			//					break;
-			//			}
-			//		}
-			//	});
-			//}
-			//else
-			//{
-			//	StartLevel(levelData);
-			//}
-		}
+            //			// Check what button the player selected
+            //			switch (action)
+            //			{
+            //				case "continue":
+            //					StartLevel(levelData);
+            //					break;
+            //				case "delete":
+            //					DeleteLevelSaveData(levelData);
+            //					break;
+            //				case "restart":
+            //					DeleteLevelSaveData(levelData);
+            //					StartLevel(levelData);
+            //					break;
+            //				case "unlock":
+            //					// Try and spend the coins required to unlock the level
+            //					if (CurrencyManager.Instance.TrySpend("coins", levelData.coinsToUnlock))
+            //					{
+            //						UnlockLevel(levelData);
+            //						StartLevel(levelData);
+            //					}
+            //					break;
+            //			}
+            //		}
+            //	});
+            //}
+            //else
+            //{
+            //	StartLevel(levelData);
+            //}
+        }
 
-		public void StartLevel(LevelData levelData)
+        public void StartLevel(LevelData levelData)
 		{
 			// Check if there is already a level being loaded and if so cancel it
 			if (isLevelLoading && ActiveLevelData != null)
@@ -357,7 +367,6 @@ namespace BizzyBeeGames.PictureColoring
 						{
 							myWorksLeveDatas.Add(levelData);
 						}
-						Debug.Log(myWorksLeveDatas);
 					}
 				}
 			}

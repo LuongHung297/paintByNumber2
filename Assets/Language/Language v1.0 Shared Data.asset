@@ -204,6 +204,20 @@ MonoBehaviour:
     m_Key: All
     m_Metadata:
       m_Items: []
+  - m_Id: 2482219629273088
+    m_Key: Completed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2488361256345600
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2488486275964928
+    m_Key: 'Are you sure to restart painting
+
+      this picture?'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

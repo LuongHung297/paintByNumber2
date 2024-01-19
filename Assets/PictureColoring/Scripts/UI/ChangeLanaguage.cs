@@ -6,15 +6,30 @@ using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization;
 using BizzyBeeGames.PictureColoring;
+using BizzyBeeGames;
+using System;
 public class ChangeLanaguage : MonoBehaviour
 {
-   public bool isStart = false;
-    int Index = 0;
+
+    public bool isStart = false;
+    //public int Index { get; set; }
+    public int Index;
+
+   
     // Start is called before the first frame update
     public void SetIndex(int id)
     {
         Index = id;
         if(isStart) {
+            ChangeLocale();
+        }
+
+    }
+    public void setByStart(int id)
+    {
+        Index = id;
+        if (isStart)
+        {
             ChangeLocale();
         }
     }
@@ -27,6 +42,7 @@ public class ChangeLanaguage : MonoBehaviour
             return;
         }
         StartCoroutine(SetLocale());
+
     }
 
     private IEnumerator SetLocale()

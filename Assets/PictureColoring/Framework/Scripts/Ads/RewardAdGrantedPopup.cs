@@ -21,8 +21,8 @@ namespace BizzyBeeGames
 		{
 			base.OnShowing(inData);
 
-			string title	= inData[0] as string;
-			string message	= inData[1] as string;
+			//string title	= inData[0] as string;
+			//string message	= inData[1] as string;
 
 			//titleText.text		= title;
 			//messageText.text	= message;

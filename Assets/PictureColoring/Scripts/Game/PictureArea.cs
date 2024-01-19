@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace BizzyBeeGames.PictureColoring
 {
-	public class PictureArea : MonoBehaviour
+	public class PictureArea :SaveableManager<PictureArea>
 	{
 		#region Inspector Variables
 
@@ -26,15 +25,49 @@ namespace BizzyBeeGames.PictureColoring
 		[SerializeField] private float				numberPadding 		= 0f;
 		[SerializeField] private Texture2D[]		ListImageToUse;
 		[SerializeField] private Texture2D regionBackground = null;
-
 		[Range(1, 0)][SerializeField] private float numberStartAppearing 	= 0f;
 		[Range(1, 0)][SerializeField] private float numberEndAppearing 		= 0f;
 
-		#endregion
+        #endregion
+        public int texttureSelct { get; set; }
 
-		#region Member Variables
+		#region save
+		protected override void Awake()
+		{
+            base.Awake();
+            InitSave();
+        }
 
-		private RectTransform		pictureContainer;
+        public override string SaveId { get { return "highlight_config"; } }
+        public override Dictionary<string, object> Save()
+        {
+            Dictionary<string, object> json = new Dictionary<string, object>();
+
+			json["regon_Background"] = texttureSelct;
+            return json;
+        }
+
+        protected override void LoadSaveData(bool exists, JSONNode saveData)
+        {
+            if (exists)
+            {
+				texttureSelct = saveData["regon_Background"].AsInt;
+            }
+            else
+            {
+				texttureSelct = 0;
+            }
+
+            backGroundGen.removeBg();
+			backGroundGen.ReloadListBack(ListImageToUse, texttureSelct, true);
+            regionBackground = ListImageToUse[texttureSelct];
+            texttureSelct = texttureSelct;
+        }
+        #endregion
+
+        #region Member Variables
+
+        private RectTransform		pictureContainer;
 		private PictureCreator		pictureCreator;
 		private ColorNumbersText	colorNumbersText;
 		public backGroundGen backGroundGen;
@@ -45,7 +78,6 @@ namespace BizzyBeeGames.PictureColoring
 		#region Properties
 
 		public PixelClickedHandler OnPixelClicked { get; set; }
-		public int texttureSelct { get; set; }
 		public Texture2D[] ListImageToUse_share { get; set; }
 
 		#endregion
@@ -74,7 +106,7 @@ namespace BizzyBeeGames.PictureColoring
 		public void PictureArenaChange(int texture)
 		{
             backGroundGen.removeBg();
-			backGroundGen.ReloadListBack(ListImageToUse, texture);
+			backGroundGen.ReloadListBack(ListImageToUse, texture,false);
             regionBackground = ListImageToUse[texture];
 			texttureSelct = texture;
         }

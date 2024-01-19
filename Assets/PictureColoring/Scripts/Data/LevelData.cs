@@ -35,7 +35,6 @@ namespace BizzyBeeGames.PictureColoring
 				{
 					ParseLevelFile();
 				}
-
 				return id;
 			}
 		}
@@ -188,12 +187,13 @@ namespace BizzyBeeGames.PictureColoring
 			{
 				Debug.LogError(levelFile.name);
 			}
-
 			id				= fileContents[0];
+			id = id.Substring(0, id.Length - 1);
 			resourcesPath	= fileContents[1];
 			levelFileParsed = true;
-		}
 
-		#endregion
-	}
+        }
+
+        #endregion
+    }
 }

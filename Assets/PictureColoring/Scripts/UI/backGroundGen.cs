@@ -16,18 +16,43 @@ namespace BizzyBeeGames.PictureColoring
         public Sprite select;
         public void OnEnable()
         {
-            ReloadListBack(PictureArea.ListImageToUse_share,PictureArea.texttureSelct);
+            ReloadListBack(PictureArea.ListImageToUse_share,PictureArea.texttureSelct,false);
         }
         public void OnDisable()
         {
             removeBg();
         }
-        public void ReloadListBack(Texture2D[] list,int texture)
+        public void ReloadListBack(Texture2D[] list,int texture,bool loadfromsave)
+        {
+
+            if (loadfromsave)
+            {
+                var i = 0;
+
+                foreach (var item in list)
+                {
+                    int copy = i;
+                    if (texture == copy)
+                    {
+                        GameObject.FindGameObjectWithTag("previewBg").GetComponent<Image>().sprite = Sprite.Create(item, new Rect(0, 0, item.width, item.height), new Vector2(0.5f, 0.5f));
+                    }
+
+                    i++;
+                }
+
+            }
+            else
+            {
+                SetNewList(list,texture);
+            }
+
+        }
+        private void SetNewList(Texture2D[] list, int texture)
         {
             var i = 0;
-           parentFake = new GameObject("item_list");
-           var pa =  parentFake.AddComponent<RectTransform>();
-           var hoi =  parentFake.AddComponent<HorizontalLayoutGroup>();
+            parentFake = new GameObject("item_list");
+            var pa = parentFake.AddComponent<RectTransform>();
+            var hoi = parentFake.AddComponent<HorizontalLayoutGroup>();
             hoi.spacing = 40;
             hoi.childAlignment = TextAnchor.MiddleRight;
             hoi.childScaleWidth = true;
@@ -40,7 +65,7 @@ namespace BizzyBeeGames.PictureColoring
             {
                 int copy = i;
                 var data = GameObject.Instantiate(BoxPrefab);
-                if(texture == copy)
+                if (texture == copy)
                 {
                     GameObject.FindGameObjectWithTag("previewBg").GetComponent<Image>().sprite = Sprite.Create(item, new Rect(0, 0, item.width, item.height), new Vector2(0.5f, 0.5f));
                     data.GetComponent<Image>().sprite = select;
@@ -49,8 +74,8 @@ namespace BizzyBeeGames.PictureColoring
                 rcdata.SetParent(pa);
                 var imdata = data.GetComponentsInChildren<Image>()[1];
                 imdata.sprite = Sprite.Create(item, new Rect(0, 0, item.width, item.height), new Vector2(0.5f, 0.5f));
-                var btn =  data.GetComponentInChildren<Button>();
-                btn.onClick.AddListener(()=>PictureArea.PictureArenaChange(copy));
+                var btn = data.GetComponentInChildren<Button>();
+                btn.onClick.AddListener(() => PictureArea.PictureArenaChange(copy));
                 i++;
             }
         }

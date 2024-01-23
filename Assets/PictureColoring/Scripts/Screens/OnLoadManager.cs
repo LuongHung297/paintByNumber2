@@ -1,28 +1,25 @@
-﻿using UnityEngine;
+using BizzyBeeGames.PictureColoring;
 using System.Collections;
 using System.Collections.Generic;
-using System;
-using BizzyBeeGames.PictureColoring;
-
+using UnityEngine;
 namespace BizzyBeeGames
 {
-
-    public class LangManager : SaveableManager<LangManager>
+    public class OnLoadManager : SaveableManager<OnLoadManager>
     {
-        public int Index = 0;
-        public ChangeLanaguage ChangeLanaguage = null;
+        public bool Isdone = false;
+        public ScreenManager gameScreen;
         #region save
         protected override void Awake()
         {
             base.Awake();
             InitSave();
         }
-        public override string SaveId { get { return "language_changConfig"; } }
+        public override string SaveId { get { return "StartConfig"; } }
         public override Dictionary<string, object> Save()
         {
             Dictionary<string, object> json = new Dictionary<string, object>();
 
-            json["langguageId"] = Index;
+            json["DoneOnload"] = Isdone;
             return json;
         }
 
@@ -30,14 +27,19 @@ namespace BizzyBeeGames
         {
             if (exists)
             {
-                Index = saveData["langguageId"].AsInt;
+                Isdone = saveData["DoneOnload"].AsBool;
             }
             else
             {
-                Index = 0;
+                Isdone = false;
             }
-            ChangeLanaguage.ChangeLocale();
+            ChangeScreen(Isdone);
         }
-#endregion
+        public void ChangeScreen(bool done)
+        {
+            Isdone = done;
+            gameScreen.setHome(Isdone ? "main" : "start");
+        }
+        #endregion
     }
 }

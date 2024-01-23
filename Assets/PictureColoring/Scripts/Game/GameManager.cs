@@ -16,7 +16,6 @@ namespace BizzyBeeGames.PictureColoring
 		[Header("Values")]
 		[SerializeField] private bool	awardHints			= false;
 		[SerializeField] private int	numLevelsBetweenAds	= 0;
-
 		#endregion
 
 		#region Member Variables
@@ -553,8 +552,7 @@ namespace BizzyBeeGames.PictureColoring
 
 				levelSaveDatas.Add(levelSaveData);
 			}
-
-			saveData["levels"]		= levelSaveDatas;
+            saveData["levels"]		= levelSaveDatas;
 			saveData["awarded"]		= SaveHashSetValues(awardedLevels);
 			saveData["unlocked"]	= SaveHashSetValues(unlockedLevels);
 

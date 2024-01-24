@@ -15,22 +15,23 @@ MonoBehaviour:
   adsEnabled: 1
   consentSetting: 0
   androidSettings:
-    bannerNetworkId: None
-    interstitialNetworkId: None
-    rewardNetworkId: None
+    bannerNetworkId: AdMob
+    interstitialNetworkId: AdMob
+    rewardNetworkId: AdMob
   iosSettings:
     bannerNetworkId: None
     interstitialNetworkId: None
     rewardNetworkId: None
   adMobConfig:
     androidConfig:
-      appId: 
-      bannerUnitId: 
-      interstitialUnitId: 
-      rewardUnitId: 
+      appId: ca-app-pub-1904734916946405~9637744885
+      bannerUnitId: ca-app-pub-3940256099942544/6300978111
+      interstitialUnitId: ca-app-pub-3940256099942544/1033173712
+      rewardUnitId: 'ca-app-pub-3940256099942544/5224354917  '
       showBannerOnStart: 1
-      deviceTestIds: []
-      bannerSize: 4
+      deviceTestIds:
+      - 3fcf96e-7a29-4155-9233-8e9cb3716338
+      bannerSize: 2
       bannerPosition: 3
     iosConfig:
       appId: 
@@ -41,7 +42,7 @@ MonoBehaviour:
       deviceTestIds: []
       bannerSize: 0
       bannerPosition: 3
-    isChildDirected: 0
+    isChildDirected: 1
   unityAdsConfig:
     androidConfig:
       gameId: 

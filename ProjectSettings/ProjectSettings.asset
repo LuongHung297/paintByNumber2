@@ -904,8 +904,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: 
-    iPhone: 
+    Android: BBG_ADMOB
+    iPhone: BBG_ADMOB
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

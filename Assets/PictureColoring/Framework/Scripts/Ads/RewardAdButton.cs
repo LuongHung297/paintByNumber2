@@ -105,7 +105,8 @@ namespace BizzyBeeGames
 #if UNITY_EDITOR
             if (testInEditor)
             {
-                OnRewardAdGranted("", 0);
+                //OnRewardAdGranted("", 0);
+                MobileAdsManager.Instance.ShowRewardAd(null, OnRewardAdGranted);
 
                 return;
             }

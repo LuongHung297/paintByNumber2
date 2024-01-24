@@ -46,13 +46,13 @@ namespace BizzyBeeGames
 
 			isInitialized = true;
 
-			#if UNITY_EDITOR
+			//#if UNITY_EDITOR
 
-			GameDebugManager.LogWarning(LogTag, "AdMob has initialized but will not load any ads in the Unity Editor. To test AdMob ads, please run the game on a Android or iOS device.");
+			//GameDebugManager.LogWarning(LogTag, "AdMob has initialized but will not load any ads in the Unity Editor. To test AdMob ads, please run the game on a Android or iOS device.");
 			
-			disabled = true;
+			//disabled = true;
 
-			#else
+			//#else
 
 			// Make sure an instance of InvokeOnMainThread is created
 			InvokeOnMainThread.CreateInstance();
@@ -89,11 +89,11 @@ namespace BizzyBeeGames
 
 			#endif // UNITY_EDITOR
 
-			#else
+			//#else
 
-			GameDebugManager.LogError(LogTag, "AdMob has not been setup in Mobile Ads Settings");
+			//GameDebugManager.LogError(LogTag, "AdMob has not been setup in Mobile Ads Settings");
 
-			#endif //BBG_ADMOB
+			//#endif //BBG_ADMOB
 		}
 
 		protected override void DoLoadBannerAd()
@@ -147,34 +147,34 @@ namespace BizzyBeeGames
 			}
 			#endif
 		}
-  //      #region OldCode
-  //      protected override void DoLoadInterstitialAd()
-		//{
-		//	#if BBG_ADMOB
-		//	#if UNITY_IOS
-		//	// On iOS InterstitialAd can only be used once, if another ad is request it needs to be destroyed and a new one created
-		//	DestroyLoadedInterstitialAd();
-		//	#endif
+		#region OldCode
+		protected override void DoLoadInterstitialAd()
+		{
+#if BBG_ADMOB
+#if UNITY_IOS
+			// On iOS InterstitialAd can only be used once, if another ad is request it needs to be destroyed and a new one created
+			DestroyLoadedInterstitialAd();
+#endif
 
-		//	if (interstitialAd == null)
-		//	{
-		//		// Create a new InterstitialAd object and attach the event callbakcs
-		//		interstitialAd = new InterstitialAd(InterstitialAdUnitId);
+			if (interstitialAd == null)
+			{
+				// Create a new InterstitialAd object and attach the event callbakcs
+				interstitialAd = new InterstitialAd(InterstitialAdUnitId);
 
-		//		interstitialAd.OnAdLoaded				+= InterstitialAdLoaded;
-		//		interstitialAd.OnAdFailedToLoad			+= InterstitialAdFailedToLoad;
-		//		interstitialAd.OnAdOpening				+= InterstitialAdOpening;
-		//		interstitialAd.OnAdClosed				+= InterstitialAdClosed;
-		//	}
+				interstitialAd.OnAdLoaded += InterstitialAdLoaded;
+				interstitialAd.OnAdFailedToLoad += InterstitialAdFailedToLoad;
+				interstitialAd.OnAdOpening += InterstitialAdOpening;
+				interstitialAd.OnAdClosed += InterstitialAdClosed;
+			}
 
-		//	NotifyInterstitialAdLoading();
+			NotifyInterstitialAdLoading();
 
-		//	// Load an ad
-		//	interstitialAd.LoadAd(CreateAdRequestBuilder().Build());
-		//	#endif
-		//}
-  //      #endregion
-        protected override void DoShowInterstitialAd()
+			// Load an ad
+			interstitialAd.LoadAd(CreateAdRequestBuilder().Build());
+#endif
+		}
+		#endregion
+		protected override void DoShowInterstitialAd()
 		{
 			#if BBG_ADMOB
 			NotifyInterstitialAdShowing();

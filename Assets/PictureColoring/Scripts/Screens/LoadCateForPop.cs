@@ -16,9 +16,9 @@ namespace BizzyBeeGames.PictureColoring
 
         [Space]
 
-        [SerializeField] private LevelListItem levelListItemPrefab = null;
-        [SerializeField] private GridLayoutGroup levelListContainer = null;
-        [SerializeField] private ScrollRect levelListScrollRect = null;
+        //[SerializeField] private LevelListItem levelListItemPrefab = null;
+        //[SerializeField] private GridLayoutGroup levelListContainer = null;
+        //[SerializeField] private ScrollRect levelListScrollRect = null;
 
         #endregion
 

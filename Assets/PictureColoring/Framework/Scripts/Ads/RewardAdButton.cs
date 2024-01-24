@@ -25,7 +25,7 @@ namespace BizzyBeeGames
 
 		[Space]
 
-		[SerializeField] private bool	showRewardGrantedPopup		= false;
+		//[SerializeField] private bool	showRewardGrantedPopup		= false;
 		[SerializeField] private string	rewardGrantedPopupId		= "";
 		[SerializeField] private string	rewardGrantedPopupTitle		= "";
 		[SerializeField] private string	rewardGrantedPopupMessage	= "";

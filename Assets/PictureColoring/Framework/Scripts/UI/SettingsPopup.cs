@@ -14,7 +14,6 @@ namespace BizzyBeeGames
         [SerializeField] private Onclick toggleOnclick;
         [SerializeField] private ToggleSlider	musicToggle = null;
 		[SerializeField] private ToggleSlider	soundToggle = null;
-		private bool musicEnabled = false;
 		#endregion
 
 		#region Unity Methods

@@ -7,8 +7,11 @@ using UnityEngine.EventSystems;
 
 namespace UI.Pagination
 {
+
     public partial class PagedRect
     {
+#if UNITY_ANDROID
+
         protected void OnMouseOver()
         {
             if (HighlightWhenMouseIsOver)
@@ -46,5 +49,9 @@ namespace UI.Pagination
             eventTrigger.triggers.Add(pointerEnter);
             eventTrigger.triggers.Add(pointerExit);
         }
+#endif
+
     }
+
 }
+

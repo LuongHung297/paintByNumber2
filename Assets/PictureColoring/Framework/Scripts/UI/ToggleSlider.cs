@@ -22,7 +22,7 @@ namespace BizzyBeeGames
 
 		[Space]
 
-		[SerializeField] private Graphic		handleColorGraphic	= null;
+		//[SerializeField] private Graphic		handleColorGraphic	= null;
 		[SerializeField] private Color			handleOnColor		= Color.white;
 		[SerializeField] private Color			handleOffColor		= Color.white;
 

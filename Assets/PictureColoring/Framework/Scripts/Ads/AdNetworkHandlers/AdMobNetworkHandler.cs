@@ -147,34 +147,34 @@ namespace BizzyBeeGames
 			}
 			#endif
 		}
+  //      #region OldCode
+  //      protected override void DoLoadInterstitialAd()
+		//{
+		//	#if BBG_ADMOB
+		//	#if UNITY_IOS
+		//	// On iOS InterstitialAd can only be used once, if another ad is request it needs to be destroyed and a new one created
+		//	DestroyLoadedInterstitialAd();
+		//	#endif
 
-		protected override void DoLoadInterstitialAd()
-		{
-			#if BBG_ADMOB
-			#if UNITY_IOS
-			// On iOS InterstitialAd can only be used once, if another ad is request it needs to be destroyed and a new one created
-			DestroyLoadedInterstitialAd();
-			#endif
+		//	if (interstitialAd == null)
+		//	{
+		//		// Create a new InterstitialAd object and attach the event callbakcs
+		//		interstitialAd = new InterstitialAd(InterstitialAdUnitId);
 
-			if (interstitialAd == null)
-			{
-				// Create a new InterstitialAd object and attach the event callbakcs
-				interstitialAd = new InterstitialAd(InterstitialAdUnitId);
+		//		interstitialAd.OnAdLoaded				+= InterstitialAdLoaded;
+		//		interstitialAd.OnAdFailedToLoad			+= InterstitialAdFailedToLoad;
+		//		interstitialAd.OnAdOpening				+= InterstitialAdOpening;
+		//		interstitialAd.OnAdClosed				+= InterstitialAdClosed;
+		//	}
 
-				interstitialAd.OnAdLoaded				+= InterstitialAdLoaded;
-				interstitialAd.OnAdFailedToLoad			+= InterstitialAdFailedToLoad;
-				interstitialAd.OnAdOpening				+= InterstitialAdOpening;
-				interstitialAd.OnAdClosed				+= InterstitialAdClosed;
-			}
+		//	NotifyInterstitialAdLoading();
 
-			NotifyInterstitialAdLoading();
-
-			// Load an ad
-			interstitialAd.LoadAd(CreateAdRequestBuilder().Build());
-			#endif
-		}
-
-		protected override void DoShowInterstitialAd()
+		//	// Load an ad
+		//	interstitialAd.LoadAd(CreateAdRequestBuilder().Build());
+		//	#endif
+		//}
+  //      #endregion
+        protected override void DoShowInterstitialAd()
 		{
 			#if BBG_ADMOB
 			NotifyInterstitialAdShowing();

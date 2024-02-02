@@ -15,7 +15,7 @@ namespace BizzyBeeGames.PictureColoring
 
 		#region Member Variables
 
-		private const string messageBody = "The required permission has not been granted to this application.\n\nPlease open your device settings and give this application the required {0} permission. Thank you!";
+		//private const string messageBody = "The required permission has not been granted to this application.\n\nPlease open your device settings and give this application the required {0} permission. Thank you!";
 
 		#endregion
 
@@ -23,9 +23,7 @@ namespace BizzyBeeGames.PictureColoring
 
 		public override void OnShowing(object[] inData)
 		{
-			string permission = (string)inData[0];
 
-			messageText.text = string.Format(messageBody, permission);
 		}
 
 		#endregion

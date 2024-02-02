@@ -1,57 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 namespace BizzyBeeGames
 {
 	public class TextResize : MonoBehaviour
     {	 
-        public Text txt;
-        public TextMeshProUGUI textMeshPro;
-        public Image txtBox;
-        public bool onlyH;
-        public bool onlyW;
-        void Update() {
-           
-            if(onlyH)
+        private Text txt;
+        private TextMeshProUGUI textMeshPro;
+        private LocalizeStringEvent loca;
+        public float padding;
+        void Start ()
+        {
+            txt = GetComponent<Text>();
+            textMeshPro = GetComponent<TextMeshProUGUI>();
+            loca = GetComponent<LocalizeStringEvent>();
+            if(loca != null)
             {
-                if (txt == null)
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(txtBox.rectTransform.sizeDelta.x, textMeshPro.rectTransform.sizeDelta.y);
-                }
-                else
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(txtBox.rectTransform.sizeDelta.x, txt.rectTransform.sizeDelta.y);
-
-                }
+               //loca.OnUpdateString.AddListener(setParentSize);
             }
-            else if(onlyW)
+        }
+
+        void FixedUpdate()
+        {
+            RectTransform rectTransform = transform.parent.GetComponent<RectTransform>();
+            if(txt != null)
             {
-                if (txt == null)
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(textMeshPro.rectTransform.sizeDelta.x, txtBox.rectTransform.sizeDelta.y);
-                }
-                else
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(txt.rectTransform.sizeDelta.x, txtBox.rectTransform.sizeDelta.y);
-
-                }
-            }
-            else
+                rectTransform.sizeDelta = new Vector2(txt.rectTransform.sizeDelta.x + padding, txt.rectTransform.sizeDelta.y);
+            }else if (textMeshPro != null)
             {
-                if (txt == null)
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(textMeshPro.rectTransform.sizeDelta.x, textMeshPro.rectTransform.sizeDelta.y);
-                }
-                else
-                {
-                    txtBox.rectTransform.sizeDelta = new Vector2(txt.rectTransform.sizeDelta.x, txt.rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(textMeshPro.rectTransform.sizeDelta.x + padding, textMeshPro.rectTransform.sizeDelta.y);
 
-                }
             }
-
+            
         }
 
 

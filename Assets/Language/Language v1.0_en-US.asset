@@ -65,7 +65,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16089140551680
-    m_Localized: PERMISSION REQUIRED
+    m_Localized: Can't access library!
     m_Metadata:
       m_Items: []
   - m_Id: 16327637065728
@@ -224,6 +224,22 @@ MonoBehaviour:
     m_Localized: 'Are you sure to restart painting
 
       this picture?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6136409650966528
+    m_Localized: Share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6136635472293888
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6896893929009152
+    m_Localized: To use this feature, you need to allow Paint by Number access library
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510462064308224
+    m_Localized: Go to setting
     m_Metadata:
       m_Items: []
   references:

@@ -39,7 +39,7 @@ namespace BizzyBeeGames.PictureColoring
 
             }
             buttonText.colorGradientPreset = isSelected ? selectedColor : normalColor;
-		}
+        }
 
 		#endregion
 	}

@@ -68,9 +68,9 @@ namespace BizzyBeeGames.PictureColoring
 
 			gameplayUI.gameObject.SetActive(true);
 			levelCompleteUI.gameObject.SetActive(true);
-         
             shareButtonsContainer.SetActive(NativePlugin.Exists());
-		}
+
+        }
 
         /// <summary>
         /// Invoked when the hint button is clicked
@@ -102,18 +102,18 @@ namespace BizzyBeeGames.PictureColoring
 		/// <summary>
 		/// Invoked when the Twitter button is clicked
 		/// </summary>
-		public void OnTwitterButtonClicked()
-		{
-			LoadShareTexture(ShareToTwitter);
-		}
+		//public void OnTwitterButtonClicked()
+		//{
+		//	LoadShareTexture(ShareToTwitter);
+		//}
 
-		/// <summary>
-		/// Invoked when the Instagram button is clicked
-		/// </summary>
-		public void OnInstagramButtonClicked()
-		{
-			LoadShareTexture(ShareToInstagram);
-		}
+		///// <summary>
+		///// Invoked when the Instagram button is clicked
+		///// </summary>
+		//public void OnInstagramButtonClicked()
+		//{
+		//	LoadShareTexture(ShareToInstagram);
+		//}
 
 		/// <summary>
 		/// Invoked when the Share Other button is clicked
@@ -294,32 +294,32 @@ namespace BizzyBeeGames.PictureColoring
 		/// <summary>
 		/// Shares the given texture to the twitter app if it's installed
 		/// </summary>
-		private void ShareToTwitter(Texture2D texture)
-		{
-			bool opened = ShareManager.Instance.ShareToTwitter(texture);
+		//private void ShareToTwitter(Texture2D texture)
+		//{
+		//	bool opened = ShareManager.Instance.ShareToTwitter(texture);
 
-			if (!opened)
-			{
-				ShowNotification("Twitter is not installed");
-			}
+		//	if (!opened)
+		//	{
+		//		ShowNotification("Twitter is not installed");
+		//	}
 
-			Destroy(texture);
-		}
+		//	Destroy(texture);
+		//}
 
-		/// <summary>
-		/// Shares the given texture to the instagram app if it's installed
-		/// </summary>
-		private void ShareToInstagram(Texture2D texture)
-		{
-			bool opened = ShareManager.Instance.ShareToInstagram(texture);
+		///// <summary>
+		///// Shares the given texture to the instagram app if it's installed
+		///// </summary>
+		//private void ShareToInstagram(Texture2D texture)
+		//{
+		//	bool opened = ShareManager.Instance.ShareToInstagram(texture);
 
-			if (!opened)
-			{
-				ShowNotification("Instagram is not installed");
-			}
+		//	if (!opened)
+		//	{
+		//		ShowNotification("Instagram is not installed");
+		//	}
 
-			Destroy(texture);
-		}
+		//	Destroy(texture);
+		//}
 
 		/// <summary>
 		/// Shares the given texture letting the user pick what app to use
@@ -386,9 +386,9 @@ namespace BizzyBeeGames.PictureColoring
 			else
 			{
 				#if UNITY_IOS
-				PopupManager.Instance.Show("permissions", new object[] { "Photos" });
+				PopupManager.Instance.Show("permissions",null);
 				#elif UNITY_ANDROID
-				PopupManager.Instance.Show("permissions", new object[] { "Storage" });
+				PopupManager.Instance.Show("permissions",null);
 				#endif
 			}
 		}

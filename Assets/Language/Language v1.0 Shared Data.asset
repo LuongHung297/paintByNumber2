@@ -15,56 +15,63 @@ MonoBehaviour:
   m_TableCollectionName: Language v1.0
   m_TableCollectionNameGuidString: cb4e3ed193124a04c8e63c86c465d542
   m_Entries:
-  - m_Id: 9013682176
-    m_Key: screen.name.library
+  - m_Id: 22380890152960
+    m_Key: Achievement
     m_Metadata:
       m_Items: []
-  - m_Id: 11288507965440
-    m_Key: screen.nam.Language
+  - m_Id: 1406152326766592
+    m_Key: All
     m_Metadata:
       m_Items: []
-  - m_Id: 14044912279552
-    m_Key: text.complete
+  - m_Id: 22901260673024
+    m_Key: "allsave\t"
     m_Metadata:
       m_Items: []
-  - m_Id: 14217239453696
-    m_Key: text.Painting.complete
+  - m_Id: 2488486275964928
+    m_Key: 'Are you sure to restart painting
+
+      this picture?'
     m_Metadata:
       m_Items: []
-  - m_Id: 14583909703680
-    m_Key: text.consumable
+  - m_Id: 18451917824000
+    m_Key: Auto-switch color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21433690480640
+    m_Key: BackGround Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22036151918592
+    m_Key: Categories
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18268819677184
+    m_Key: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2482219629273088
+    m_Key: Completed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21130907869184
+    m_Key: Congratulations!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068924259131392
+    m_Key: Create short videos when you finish a painting to preserve your colorization
+      process
     m_Metadata:
       m_Items: []
   - m_Id: 14751245656064
     m_Key: error
     m_Metadata:
       m_Items: []
-  - m_Id: 15068808994816
-    m_Key: text.seting
+  - m_Id: 19501194272768
+    m_Key: Feedback
     m_Metadata:
       m_Items: []
-  - m_Id: 15247326961664
-    m_Key: text.outcoin
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15533978279936
-    m_Key: text.freehint
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15689335300096
-    m_Key: text.store
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15884731146240
-    m_Key: text.privacy
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16089140551680
-    m_Key: text.Reqired
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16327637065728
-    m_Key: text.Posess
+  - m_Id: 20956575817728
+    m_Key: Highlight areas
     m_Metadata:
       m_Items: []
   - m_Id: 16665211428864
@@ -75,147 +82,156 @@ MonoBehaviour:
     m_Key: lang.en-US
     m_Metadata:
       m_Items: []
-  - m_Id: 17164245524480
-    m_Key: text.load
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17367321141248
-    m_Key: text.freehin
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17670036643840
-    m_Key: text.watch
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17827499204608
-    m_Key: text.cancel
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18039093452800
-    m_Key: srceen.name.daidy
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18268819677184
-    m_Key: Close
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18451917824000
-    m_Key: Auto-switch color
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18572508258304
-    m_Key: Setting
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18928843743232
-    m_Key: Term of service
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19270314614784
-    m_Key: Privacy policy
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19501194272768
-    m_Key: Feedback
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19630823432192
-    m_Key: Rate us
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19941919154176
-    m_Key: Share
-    m_Metadata:
-      m_Items: []
-  - m_Id: 20402508259328
-    m_Key: Store
-    m_Metadata:
-      m_Items: []
-  - m_Id: 20798777712640
-    m_Key: Sound Effect
-    m_Metadata:
-      m_Items: []
-  - m_Id: 20956575817728
-    m_Key: Highlight areas
-    m_Metadata:
-      m_Items: []
-  - m_Id: 21130907869184
-    m_Key: Congratulations!
-    m_Metadata:
-      m_Items: []
   - m_Id: 21314882625536
     m_Key: My Painting
     m_Metadata:
       m_Items: []
-  - m_Id: 21433690480640
-    m_Key: BackGround Music
-    m_Metadata:
-      m_Items: []
-  - m_Id: 21870099423232
-    m_Key: Paint Now!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 22036151918592
-    m_Key: Categories
-    m_Metadata:
-      m_Items: []
-  - m_Id: 22251562983424
-    m_Key: reorder
-    m_Metadata:
-      m_Items: []
-  - m_Id: 22380890152960
-    m_Key: Achievement
-    m_Metadata:
-      m_Items: []
-  - m_Id: 22901260673024
-    m_Key: "allsave\t"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1038380829892608
-    m_Key: Vibrant And Colorful Painting
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1038890718846976
-    m_Key: unleash
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1040132027310080
-    m_Key: "Skip\r"
+  - m_Id: 6136635472293888
+    m_Key: save
     m_Metadata:
       m_Items: []
   - m_Id: 1045016420147200
     m_Key: Next
     m_Metadata:
       m_Items: []
+  - m_Id: 21870099423232
+    m_Key: Paint Now!
+    m_Metadata:
+      m_Items: []
   - m_Id: 1068831485321216
     m_Key: Preserve The Painting Journey
     m_Metadata:
       m_Items: []
-  - m_Id: 1068924259131392
-    m_Key: Create short videos when you finish a painting to preserve your colorization
-      process
+  - m_Id: 19270314614784
+    m_Key: Privacy policy
     m_Metadata:
       m_Items: []
-  - m_Id: 1069541228666880
-    m_Key: START NOW
+  - m_Id: 19630823432192
+    m_Key: Rate us
     m_Metadata:
       m_Items: []
-  - m_Id: 1406152326766592
-    m_Key: All
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2482219629273088
-    m_Key: Completed!
+  - m_Id: 22251562983424
+    m_Key: reorder
     m_Metadata:
       m_Items: []
   - m_Id: 2488361256345600
     m_Key: Restart
     m_Metadata:
       m_Items: []
-  - m_Id: 2488486275964928
-    m_Key: 'Are you sure to restart painting
-
-      this picture?'
+  - m_Id: 11288507965440
+    m_Key: screen.nam.Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9013682176
+    m_Key: screen.name.library
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18572508258304
+    m_Key: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6136409650966528
+    m_Key: Shar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19941919154176
+    m_Key: Share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040132027310080
+    m_Key: "Skip\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20798777712640
+    m_Key: Sound Effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18039093452800
+    m_Key: srceen.name.daidy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069541228666880
+    m_Key: START NOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20402508259328
+    m_Key: Store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18928843743232
+    m_Key: Term of service
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17827499204608
+    m_Key: text.cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14044912279552
+    m_Key: text.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14583909703680
+    m_Key: text.consumable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17367321141248
+    m_Key: text.freehin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15533978279936
+    m_Key: text.freehint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17164245524480
+    m_Key: text.load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15247326961664
+    m_Key: text.outcoin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14217239453696
+    m_Key: text.Painting.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16327637065728
+    m_Key: text.Posess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15884731146240
+    m_Key: text.privacy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16089140551680
+    m_Key: text.Reqired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15068808994816
+    m_Key: text.seting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15689335300096
+    m_Key: text.store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17670036643840
+    m_Key: text.watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038890718846976
+    m_Key: unleash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038380829892608
+    m_Key: Vibrant And Colorful Painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6896893929009152
+    m_Key: mes.req
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510462064308224
+    m_Key: Go to setting
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -76,6 +76,20 @@ namespace BizzyBeeGames
 			// Show the home screen when the app starts up
 			Show(homeScreenId, false, true);
 		}
+#if UNITY_ANDROID
+		//public void FixedUpdate()
+  //      {
+		//	GameDebugManager.Log("CLICK",Input.anyKey.ToString());
+  //          if (CurrentScreenId != "main" && CurrentScreenId != "start")
+  //          {
+  //              if (Input.GetKey(KeyCode.Escape))
+  //              {
+  //                  Home();
+  //              }
+  //          }
+
+  //      }
+#endif
 		public void setHome(string Home)
 		{
             homeScreenId = Home;

@@ -29,9 +29,8 @@ MonoBehaviour:
       interstitialUnitId: ca-app-pub-3940256099942544/1033173712
       rewardUnitId: 'ca-app-pub-3940256099942544/5224354917  '
       showBannerOnStart: 1
-      deviceTestIds:
-      - 3fcf96e-7a29-4155-9233-8e9cb3716338
-      bannerSize: 2
+      deviceTestIds: []
+      bannerSize: 4
       bannerPosition: 3
     iosConfig:
       appId: 

@@ -6,9 +6,15 @@ namespace BizzyBeeGames.PictureColoring
 {
 	public class ShareManager : SingletonComponent<ShareManager>
 	{
-		#region Inspector Variables
+        private void Start()
+        {
+#if UNITY_ANDROID
+            NativePlugin.RequestPhotosPermission(gameObject.name, "OnPhotosPermissionGranted");
+#endif
+        }
+        #region Inspector Variables
 
-		[SerializeField] private string androidGallaryImageName			= "";
+        [SerializeField] private string androidGallaryImageName			= "";
 		[SerializeField] private string androidGallaryImageDescription	= "";
 
 		#endregion
@@ -25,19 +31,19 @@ namespace BizzyBeeGames.PictureColoring
 
 		#region Public Variables
 
-		public bool ShareToTwitter(Texture2D imageTexture)
-		{
-			string imagePath = SaveImageForSharing(imageTexture);
+		//public bool ShareToTwitter(Texture2D imageTexture)
+		//{
+		//	string imagePath = SaveImageForSharing(imageTexture);
 
-			return NativePlugin.TryShareToTwitter(imagePath);
-		}
+		//	return NativePlugin.TryShareToTwitter(imagePath);
+		//}
 
-		public bool ShareToInstagram(Texture2D imageTexture)
-		{
-			string imagePath = SaveImageForSharing(imageTexture);
+		//public bool ShareToInstagram(Texture2D imageTexture)
+		//{
+		//	string imagePath = SaveImageForSharing(imageTexture);
 
-			return NativePlugin.TryShareToInstagram(imagePath);
-		}
+		//	return NativePlugin.TryShareToInstagram(imagePath);
+		//}
 
 		public void ShareToOther(Texture2D imageTexture)
 		{
@@ -59,10 +65,12 @@ namespace BizzyBeeGames.PictureColoring
 			#if UNITY_ANDROID
 			else
 			{
-				// Android asks for permissions at the beginning of the application, cant ask for permission again
-				callback(false);
-			}
-			#elif UNITY_IOS
+			
+                    callback(false);
+                // Android asks for permissions at the beginning of the application, cant ask for permission again
+				
+            }
+#elif UNITY_IOS
 			else
 			{
 				saveToPhotosTexture		= imageTexture;
@@ -70,8 +78,8 @@ namespace BizzyBeeGames.PictureColoring
 
 				NativePlugin.RequestPhotosPermission(gameObject.name, "OnPhotosPermissionGranted");
 			}
-			#endif
-		}
+#endif
+        }
 
 		#endregion
 

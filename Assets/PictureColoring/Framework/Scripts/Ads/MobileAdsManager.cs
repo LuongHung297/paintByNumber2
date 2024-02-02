@@ -606,7 +606,7 @@ namespace BizzyBeeGames
 					BannerAdHandler.bannerAdsEnabled = true;
 
 					// Add this instance event listeners
-					BannerAdHandler.OnBannerAdLoading		+= BannerAdLoaded;
+					BannerAdHandler.OnBannerAdLoading		+= BannerAdLoading;
 					BannerAdHandler.OnBannerAdLoaded		+= BannerAdLoaded;
 					BannerAdHandler.OnBannerAdFailedToLoad	+= BannerAdFailedToLoad;
 					BannerAdHandler.OnBannerAdShown			+= BannerAdShown;

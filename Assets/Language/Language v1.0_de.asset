@@ -65,7 +65,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16089140551680
-    m_Localized: "ERLAUBNIS ERFORDERLICH\r"
+    m_Localized: "Auf die Bibliothek kann nicht zugegriffen werden!\r"
     m_Metadata:
       m_Items: []
   - m_Id: 16327637065728
@@ -225,6 +225,23 @@ MonoBehaviour:
 
       Dieses
       Bild?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6136409650966528
+    m_Localized: Aktie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6136635472293888
+    m_Localized: Speichern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6896893929009152
+    m_Localized: "Um diese Funktion nutzen zu k\xF6nnen, m\xFCssen Sie Paint by Number
+      zulassen\r\nauf die Bibliothek zugreifen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7510462064308224
+    m_Localized: Gehen Sie zur Einstellung
     m_Metadata:
       m_Items: []
   references:

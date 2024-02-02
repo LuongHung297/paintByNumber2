@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Android;
 
 namespace BizzyBeeGames.PictureColoring
 {
+	
 	public static class NativePlugin
 	{
 		#if UNITY_IOS
@@ -38,90 +40,93 @@ namespace BizzyBeeGames.PictureColoring
 
 		public static bool Exists()
 		{
-			#if UNITY_EDITOR
-			return false;
-			#elif UNITY_ANDROID
+#if UNITY_EDITOR
+
+            return true;
+#elif UNITY_ANDROID
 			try
 			{
-				return new AndroidJavaClass("com.nfagan.share.Share") != null && new AndroidJavaClass("com.nfagan.utils.Utils") != null;
+			 //new AndroidJavaClass("com.nfagan.share.Share") != null &&
+				return new AndroidJavaClass("com.nfagan.utils.Utils") != null;
 			}
 			catch (System.Exception)
 			{
 				Debug.LogError("[NativePlugin] SharePlugin has not been imported.");
 				return false;
 			}
-			#elif UNITY_IOS
+#elif UNITY_IOS
 			return true;
-			#endif
-		}
+#endif
+        }
 
-		/// <summary>
-		/// Tries to open the Twitter app to share the image. Returns false if Twitter is not installed on the device.
-		/// </summary>
-		public static bool TryShareToTwitter(string imagePath)
+        /// <summary>
+        /// Tries to open the Twitter app to share the image. Returns false if Twitter is not installed on the device.
+        /// </summary>
+        //public static bool TryShareToTwitter(string imagePath)
+        //{
+        //	#if UNITY_EDITOR
+        //	return false;
+        //	#elif UNITY_ANDROID
+        //	AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
+
+        //	if (plugin != null)
+        //	{
+        //		return plugin.CallStatic<bool>("shareToTwitter", "", imagePath);
+        //	}
+
+        //	return false;
+        //	#elif UNITY_IOS
+        //	return _shareToTwitter("", imagePath);
+        //	#endif
+        //}
+
+        ///// <summary>
+        ///// Tries to open the Instagram app to share the image. Returns false if Instagram is not installed on the device.
+        ///// </summary>
+        //public static bool TryShareToInstagram(string imagePath)
+        //{
+        //	#if UNITY_EDITOR
+        //	return false;
+        //	#elif UNITY_ANDROID
+        //	AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
+
+        //	if (plugin != null)
+        //	{
+        //		return plugin.CallStatic<bool>("shareToInstagram", "", imagePath);
+        //	}
+
+        //	return false;
+        //	#elif UNITY_IOS
+        //	return _shareToInstagram("", imagePath);
+        //	#endif
+        //}
+
+        /// <summary>
+        /// Opens a list of applications that can handle the image for the user to select
+        /// </summary>
+        public static void ShareToOther(string imagePath)
 		{
-			#if UNITY_EDITOR
-			return false;
-			#elif UNITY_ANDROID
-			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
+#if !UNITY_EDITOR && UNITY_ANDROID
+			//AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
 		
-			if (plugin != null)
+			if (imagePath != null)
 			{
-				return plugin.CallStatic<bool>("shareToTwitter", "", imagePath);
+				//plugin.CallStatic("shareToOther", imagePath);
+							new NativeShare { }.AddFile(imagePath).Share();
 			}
-
-			return false;
-			#elif UNITY_IOS
-			return _shareToTwitter("", imagePath);
-			#endif
-		}
-
-		/// <summary>
-		/// Tries to open the Instagram app to share the image. Returns false if Instagram is not installed on the device.
-		/// </summary>
-		public static bool TryShareToInstagram(string imagePath)
-		{
-			#if UNITY_EDITOR
-			return false;
-			#elif UNITY_ANDROID
-			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
-		
-			if (plugin != null)
-			{
-				return plugin.CallStatic<bool>("shareToInstagram", "", imagePath);
-			}
-
-			return false;
-			#elif UNITY_IOS
-			return _shareToInstagram("", imagePath);
-			#endif
-		}
-
-		/// <summary>
-		/// Opens a list of applications that can handle the image for the user to select
-		/// </summary>
-		public static void ShareToOther(string imagePath)
-		{
-			#if !UNITY_EDITOR && UNITY_ANDROID
-			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.share.Share");
-		
-			if (plugin != null)
-			{
-				plugin.CallStatic("shareToOther", imagePath);
-			}
-			#elif !UNITY_EDITOR && UNITY_IOS
+#elif !UNITY_EDITOR && UNITY_IOS
 			_shareToOther(imagePath);
-			#endif
-		}
+#endif
+        }
 
-		/// <summary>
-		/// Checks if the application has permission to use the camera (ei WebCamTexture)
-		/// </summary>
-		public static bool HasCameraPermission()
+        /// <summary>
+        /// Checks if the application has permission to use the camera (ei WebCamTexture)
+        /// </summary>
+        public static bool HasCameraPermission()
 		{
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			return true;
-			#elif UNITY_ANDROID
+#elif UNITY_ANDROID
 			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.utils.Utils");
 
 			if (plugin != null)
@@ -130,9 +135,9 @@ namespace BizzyBeeGames.PictureColoring
 			}
 
 			return false;
-			#elif UNITY_IOS
+#elif UNITY_IOS
 			return _hasCameraPermission();
-			#endif
+#endif
 		}
 
 		/// <summary>
@@ -140,9 +145,9 @@ namespace BizzyBeeGames.PictureColoring
 		/// </summary>
 		public static bool HasReadExternalStoragePermission()
 		{
-			#if UNITY_EDITOR || UNITY_IOS
+#if UNITY_EDITOR || UNITY_IOS
 			return true;
-			#elif UNITY_ANDROID
+#elif UNITY_ANDROID
 			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.utils.Utils");
 
 			if (plugin != null)
@@ -151,7 +156,7 @@ namespace BizzyBeeGames.PictureColoring
 			}
 
 			return false;
-			#endif
+#endif
 		}
 
 		/// <summary>
@@ -159,9 +164,9 @@ namespace BizzyBeeGames.PictureColoring
 		/// </summary>
 		public static void RequestCameraPermission(string callbackGameObjectName, string callbackMethodName)
 		{
-			#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
 			_requestCameraPermission(callbackGameObjectName, callbackMethodName);
-			#endif
+#endif
 		}
 
 			/// <summary>
@@ -169,9 +174,9 @@ namespace BizzyBeeGames.PictureColoring
 		/// </summary>
 		public static bool HasPhotosPermission()
 		{
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			return true;
-			#elif UNITY_ANDROID
+#elif UNITY_ANDROID
 			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.utils.Utils");
 
 			if (plugin != null)
@@ -180,9 +185,9 @@ namespace BizzyBeeGames.PictureColoring
 			}
 
 			return false;
-			#elif UNITY_IOS
+#elif UNITY_IOS
 			return _hasPhotosPermission();
-			#endif
+#endif
 		}
 
 		/// <summary>
@@ -190,26 +195,28 @@ namespace BizzyBeeGames.PictureColoring
 		/// </summary>
 		public static void RequestPhotosPermission(string callbackGameObjectName, string callbackMethodName)
 		{
-			#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_ANDROID&& !UNITY_EDITOR
+			Permission.RequestUserPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+#elif UNITY_IOS && !UNITY_EDITOR
 			_requestPhotosPermission(callbackGameObjectName, callbackMethodName);
-			#endif
-		}
+#endif
+        }
 
-		/// <summary>
-		/// Shows the devices image picker so the user can select an image
-		/// </summary>
-		public static void ShowImagePicker(string callbackGameObjectName, string callbackMethodName, string androidDeviceImagePath)
+        /// <summary>
+        /// Shows the devices image picker so the user can select an image
+        /// </summary>
+        public static void ShowImagePicker(string callbackGameObjectName, string callbackMethodName, string androidDeviceImagePath)
 		{
-			#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
 			_showImagePicker(callbackGameObjectName, callbackMethodName);
-			#elif UNITY_ANDROID && !UNITY_EDITOR
+#elif UNITY_ANDROID && !UNITY_EDITOR
 			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.imagepicker.ImagePicker");
 
 			if (plugin != null)
 			{
 				plugin.CallStatic("showImagePicker", callbackGameObjectName, callbackMethodName, androidDeviceImagePath);
 			}
-			#endif
+#endif
 		}
 
 		/// <summary>
@@ -217,16 +224,16 @@ namespace BizzyBeeGames.PictureColoring
 		/// </summary>
 		public static void SaveImageToPhotos(string imagePath, string imageName, string imageDescription)
 		{
-			#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
 			_saveImageToDevice(imagePath);
-			#elif UNITY_ANDROID && !UNITY_EDITOR
+#elif UNITY_ANDROID && !UNITY_EDITOR
 			AndroidJavaClass plugin = new AndroidJavaClass ("com.nfagan.utils.Utils");
 
 			if (plugin != null)
 			{
 				plugin.CallStatic("saveImageToGallery", imagePath, imageName, imageDescription);
 			}
-			#endif
+#endif
 		}
 	}
 }

@@ -1,5 +1,6 @@
 using BizzyBeeGames;
 using BizzyBeeGames.PictureColoring;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Policy;
@@ -19,6 +20,31 @@ namespace BizzyBeeGames.PictureColoring
         public List<Sprite> ParentToggle_Parent;
         private PictureArea PictureArea;
         public ToggleSlider MusicSlider;
+        public void OpenSetting()
+        {
+            try
+            {
+                using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+                using (AndroidJavaObject currentActivityObject = unityClass.GetStatic<AndroidJavaObject>("currentActivity"))
+                {
+                    string packageName = currentActivityObject.Call<string>("getPackageName");
+
+                    using (var uriClass = new AndroidJavaClass("android.net.Uri"))
+                    using (AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("fromParts", "package", packageName, null))
+                    using (var intentObject = new AndroidJavaObject("android.content.Intent", "android.settings.APPLICATION_DETAILS_SETTINGS", uriObject))
+                    {
+                        intentObject.Call<AndroidJavaObject>("addCategory", "android.intent.category.DEFAULT");
+                        intentObject.Call<AndroidJavaObject>("setFlags", 0x10000000);
+                        currentActivityObject.Call("startActivity", intentObject);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                GameDebugManager.Log("gotosetting",e.ToString());
+            }
+        }
+
         public void Seclect(Image item)
         {
             var parentChild = item.transform.parent.GetComponentsInChildren<Image>();

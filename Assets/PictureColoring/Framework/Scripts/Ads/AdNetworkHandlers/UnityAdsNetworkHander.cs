@@ -41,9 +41,10 @@ namespace BizzyBeeGames
 
 		protected override void DoInitialize()
 		{
-			GameDebugManager.Log(LogTag, "Initializing Unity Ads");
 
-			#if BBG_UNITYADS
+            GameDebugManager.Log(LogTag, "Initializing Unity Ads");
+
+#if BBG_UNITYADS
 
 			GameDebugManager.Log(LogTag, "Game Id: " + GameId);
 
@@ -78,9 +79,9 @@ namespace BizzyBeeGames
 				PreLoadRewardAd();
 			}
 
-			#else
+#else
 
-			GameDebugManager.LogError(LogTag, "Unity Ads has not been setup in Mobile Ads Settings");
+            GameDebugManager.LogError(LogTag, "Unity Ads has not been setup in Mobile Ads Settings");
 
 			#endif
 		}

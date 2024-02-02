@@ -26,20 +26,31 @@ namespace BizzyBeeGames
 
 			// Adjust the screen when ads are removed so the banner space goes away
 			MobileAdsManager.Instance.OnAdsRemoved += AdjustScreen;
+            MobileAdsManager.Instance.OnBannerAdLoading += test1;
+            MobileAdsManager.Instance.OnBannerAdLoaded += test2;
+
+        }
+
+        #endregion
+
+        #region Private Methods
+        private void test1()
+		{
+			Debug.Log("dang chay");
+		}     private void test2()
+		{
+			Debug.Log(" chay");
 		}
-
-		#endregion
-
-		#region Private Methods
 
 		protected void AdjustScreen()
 		{
-			Rect safeArea = UnityEngine.Screen.safeArea;
+
+            Rect safeArea = UnityEngine.Screen.safeArea;
 
 			float yMin = safeArea.yMin;
 			float yMax = safeArea.yMax;
 
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 
 			// In editor, if the screen width/height is set to iPhoneX then set the offsets as they would be on the iPhoneX
 			if (UnityEngine.Screen.width == 1125f && UnityEngine.Screen.height == 2436f)
@@ -48,12 +59,12 @@ namespace BizzyBeeGames
 				yMax = 2304;
 			}
 
-			#endif
+#endif
 
-			float topAreaHeightInPixels		= yMin;
-			float bottomAreaHeightInPixels	= UnityEngine.Screen.height - yMax;
+			float topAreaHeightInPixels = yMin;
+			float bottomAreaHeightInPixels = UnityEngine.Screen.height - yMax;
 
-			#if BBG_UNITYADS || BBG_ADMOB
+#if BBG_UNITYADS || BBG_ADMOB
 			if (adjustForBannerAd && MobileAdsManager.Instance.AreBannerAdsEnabled)
 			{
 				float bannerHeight = MobileAdsManager.Instance.GetBannerHeightInPixels();
@@ -72,7 +83,7 @@ namespace BizzyBeeGames
 						break;
 				}
 			}
-			#endif
+#endif
 
 			float scale			= 1f / Utilities.GetCanvas(transform).scaleFactor;
 			float topOffset		= topAreaHeightInPixels * scale;

@@ -26,7 +26,7 @@ namespace BizzyBeeGames.PictureColoring
 		
 		private void Start()
 		{
-			renderTexture = new RenderTexture(UnityEngine.Screen.width, UnityEngine.Screen.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Default);
+            renderTexture = new RenderTexture(UnityEngine.Screen.width, UnityEngine.Screen.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Default);
 		}
 		
 		#endregion // Unity Methods

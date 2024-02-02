@@ -29,6 +29,7 @@ namespace BizzyBeeGames.PictureColoring
                         return;
                 }
             }
+            //MobileAdsManager.Instance.ShowBannerAd();
         }
     }
 }

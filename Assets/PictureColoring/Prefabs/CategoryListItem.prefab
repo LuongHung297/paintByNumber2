@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 222989273541651992}
   - component: {fileID: 837416295531071458}
   - component: {fileID: 8380546047856665630}
+  - component: {fileID: 536621556234708793}
   m_Layer: 5
   m_Name: CategoryText
   m_TagString: Untagged
@@ -150,6 +151,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &536621556234708793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194229868493976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61323a80b2c3924095a8bbcfe92c7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 0}
+  textMeshPro: {fileID: 8380546047856665630}
 --- !u!1 &1335127608537642
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +176,6 @@ GameObject:
   - component: {fileID: 224764980474013984}
   - component: {fileID: 222868037677091652}
   - component: {fileID: 114395360787272808}
-  - component: {fileID: 5264808165418097310}
   m_Layer: 5
   m_Name: Underline
   m_TagString: Untagged
@@ -227,23 +241,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5264808165418097310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335127608537642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61323a80b2c3924095a8bbcfe92c7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txt: {fileID: 0}
-  textMeshPro: {fileID: 8380546047856665630}
-  txtBox: {fileID: 114395360787272808}
-  onlyH: 0
-  onlyW: 0
 --- !u!1 &1547511070442242
 GameObject:
   m_ObjectHideFlags: 0
